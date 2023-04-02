@@ -9,6 +9,23 @@ g.toggle_theme_icon = "   "
 g.transparency = config.ui.transparency
 
 -------------------------------------- options ------------------------------------------
+opt.nu = true
+opt.relativenumber = true
+
+opt.wrap = false
+
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+
+opt.hlsearch = false
+opt.incsearch = true
+
+opt.scrolloff = 8
+opt.isfname:append("@-@")
+
+opt.colorcolumn = "80"
+
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
@@ -67,7 +84,7 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd("FileType", {
   pattern = "qf",
   callback = function()
-    vim.opt_local.buflisted = false
+    opt_local.buflisted = false
   end,
 })
 
